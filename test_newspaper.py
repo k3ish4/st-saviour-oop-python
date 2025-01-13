@@ -1,8 +1,11 @@
 from newspaper import Newspaper
+from periodical import Periodical
 
-if __name__ == '__main__':
-    print('new dawn, new day')
+def test_newspaper():
     authors = ['John Doe', 'Mary Sue']
     headlines = ['LA Wildfire', 'Polar Vortex, East Coast']
     nyt = Newspaper('New York Times, January 2025', authors, 1.50, 'NYT', 'weekly', headlines)
-    print(nyt)
+
+    assert isinstance(nyt, Newspaper)
+    assert isinstance(nyt, Periodical)
+

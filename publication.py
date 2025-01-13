@@ -1,9 +1,13 @@
-class Publication:
-    def __init__(self, title: str, author: str, cost: float, publisher: str):
+from abc import ABC, abstractmethod
+
+# create Publication grandparent class and define all its properties
+class Publication(ABC):
+    def __init__(self, title: str, authors: list, cost: float, publisher: str):
         self.title = title
-        self.author = author
+        self.authors = authors
         self.cost = cost
         self.publisher = publisher
-
-        def read(self):
-            print("You are now reading " + self.title)
+        
+    # define a read function
+    def read(self):
+        return "You are now reading " + self.title + "."
